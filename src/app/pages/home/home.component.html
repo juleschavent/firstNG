@@ -1,0 +1,39 @@
+<div class="container-fluid mx-5 p-0">
+    <h2 class="mb-3">Home</h2>
+</div>
+<div class="container-fluid mb-5 p-0 row">
+
+    <!-- <img class="col" [src]="'./assets/images/' + imgJson[randomIndex].url" [alt]="imgJson[randomIndex].title" (mouseover)="changeRandom()"> -->
+    <div class="col-5 mx-5">
+        <h3 class="mb-3">This is a random image</h3>
+        <p>Change page and come back to see a new image (maybe).</p>
+        <p [ngClass]="{'color': textColor}" (click)="textColor = !textColor">Those are the available images :
+            {{availableImg}}</p>
+        <button (click)="textDisplay = !textDisplay" class="btn btn-primary mb-3">Click to show image</button>
+    </div>
+    <img *ngIf="textDisplay; else otherText" class="col-5" [src]="'./assets/images/' + sourceImg" alt=""
+        (mouseover)="changeSize()" (mouseout)="returnSize()" [ngStyle]="transform">
+    <ng-template #otherText>
+        <p class="col-5">Your image is "{{sourceImg}}"</p>
+    </ng-template>
+</div>
+<div class="container text-center mb-5 d-flex justify-content-center align-items-center">
+        <!-- <button class="btn btn-white mx-2" (click)="decSwitch()"><i
+                class="bi bi-caret-left-fill"></i></button> -->
+        <button class="btn btn-white mx-2"><i
+                class="bi bi-caret-left-fill"></i></button>
+        <div [ngSwitch]="displaySwitch">
+            <img *ngSwitchCase="1" src="./assets/images/city.jpg" alt="">
+            <img *ngSwitchCase="2" src="./assets/images/dive.jpg" alt="">
+            <img *ngSwitchCase="3" src="./assets/images/finger.jpg" alt="">
+        </div>
+        <button class="btn btn-white mx-2" (click)="incSwitch()"><i
+                class="bi bi-caret-right-fill"></i></button>
+</div>
+<div class="container">
+    <ul class="row">
+        <li *ngFor="let element of imgTable" class="col text-center"> Element for {{element}} <br>
+            <img [src]="'./assets/images/' + element" width="80"alt="">
+        </li>
+    </ul>
+</div>

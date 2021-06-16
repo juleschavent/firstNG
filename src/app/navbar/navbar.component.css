@@ -1,0 +1,21 @@
+ul {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    padding: 1rem;
+}
+
+li {
+    list-style-type: none;
+    cursor: pointer;
+}
+
+li:hover {
+    text-decoration: underline;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
