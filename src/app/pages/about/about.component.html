@@ -1,8 +1,10 @@
 <p>Here is my about http module</p>
 <div class="row">
     <div class="col mb-2" *ngFor="let element of galery">
-        <img [src]="'https://picsum.photos/id/' + element.id + '/300'" alt="">
-        <p>{{element.author}}</p>
+        <a [routerLink]="'/about/' + element.id">
+            <img [src]="'https://picsum.photos/id/' + element.id + '/300'" alt="">
+            <p>{{element.author}}</p>
+        </a>
     </div>
 </div>
 

@@ -1,0 +1,13 @@
+<div class="row">
+    <form (ngSubmit)="login()" [formGroup]="authForm" class="col-6 mx-auto">
+        <div class="input-group flex-nowrap mb-2">
+            <span class="input-group-text" id="addon-wrapping">Username</span>
+            <input formControlName="email" type="text" class="form-control" placeholder="enter your username">
+        </div>
+        <div class="input-group flex-nowrap mb-3">
+            <span class="input-group-text" id="addon-wrapping">Password</span>
+            <input formControlName="password" type="password" class="form-control" placeholder="enter your password">
+        </div>
+        <button [disabled]=!authForm.valid type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>

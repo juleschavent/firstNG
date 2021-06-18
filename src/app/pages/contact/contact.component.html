@@ -1,1 +1,25 @@
-<p>contact works!</p>
+<div class="w-50 mx-auto">
+    <form #myForm="ngForm"(ngSubmit)="onSubmit(myForm.value)">
+        <div class="row">
+            <div class="mb-3 col-6">
+                <label for="firstName" class="form-label">First Name *</label>
+                <input required id="firstName" type="text" class="form-control" name="firstName" [(ngModel)]="firstName">
+            </div>
+            <div class="mb-3 col-6">
+                <label for="lastName" class="form-label">Last Name *</label>
+                <input required id="lastName" type="text" class="form-control" name="lastName" [(ngModel)]="lastName">
+            </div>
+            <div class="mb-3 col-6">
+                <label for="email" class="form-label">Email address *</label>
+                <input required id="email" type="email" class="form-control" name="email" [(ngModel)]="email">
+            </div>
+            <div class="mb-3 col-6">
+                <label for="message" class="form-label">Your message</label>
+                <textarea id="message" type="text" class="form-control" name="message" [(ngModel)]="message"></textarea>
+            </div>
+        </div>
+        <div class="col-2">
+            <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
